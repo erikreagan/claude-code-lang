@@ -4,6 +4,10 @@ A [TextMate grammar](https://macromates.com/manual/en/language_grammars) for syn
 
 > **Alpha** — API may change between releases.
 
+![Claude Code frame header with Clawd mascot](assets/frame-header.png)
+
+![Example page with multiple claude-code blocks](assets/example-page.png)
+
 ## Quick start
 
 ### Expressive Code plugin (recommended)
