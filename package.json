@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erikreagan/claude-code-lang"
+    "url": "git+https://github.com/erikreagan/claude-code-lang.git"
   },
   "devDependencies": {
     "@expressive-code/core": "^0.41.7"
