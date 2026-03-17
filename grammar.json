@@ -1,0 +1,117 @@
+{
+  "name": "claude-code",
+  "scopeName": "source.claude-code",
+  "patterns": [
+    { "include": "#horizontal-rule" },
+    { "include": "#comment" },
+    { "include": "#status-active" },
+    { "include": "#status-done" },
+    { "include": "#prompt-with-slash-command" },
+    { "include": "#prompt-with-bang" },
+    { "include": "#prompt-line" },
+    { "include": "#tool-line" },
+    { "include": "#diff-add" },
+    { "include": "#diff-remove" },
+    { "include": "#mode-indicator" },
+    { "include": "#keyboard-shortcut" },
+    { "include": "#slash-command" },
+    { "include": "#file-path" },
+    { "include": "#quoted-string" },
+    { "include": "#descriptive-text" }
+  ],
+  "repository": {
+    "horizontal-rule": {
+      "match": "^[─━═─]{3,}.*$",
+      "name": "comment.line.horizontal-rule.claude-code"
+    },
+    "comment": {
+      "match": "^\\s*#.*$",
+      "name": "comment.line.claude-code"
+    },
+    "status-active": {
+      "match": "^(\\s*✻)(\\s+)(\\w+ing\\S*)(.*)?$",
+      "captures": {
+        "1": { "name": "keyword.control.status-symbol.claude-code" },
+        "3": { "name": "keyword.control.status-active.claude-code" },
+        "4": { "name": "comment.status-done.claude-code" }
+      }
+    },
+    "status-done": {
+      "match": "^(\\s*✻)(\\s+.*)$",
+      "captures": {
+        "1": { "name": "comment.status-symbol.claude-code" },
+        "2": { "name": "comment.status-done.claude-code" }
+      }
+    },
+    "prompt-with-slash-command": {
+      "match": "^(\\s*[❯>])(\\s+)(/[a-z][a-z0-9-]*)(.*)?$",
+      "captures": {
+        "1": { "name": "keyword.operator.prompt.claude-code" },
+        "3": { "name": "entity.name.function.command.claude-code" },
+        "4": { "name": "variable.other.args.claude-code" }
+      }
+    },
+    "prompt-with-bang": {
+      "match": "^(\\s*[❯>])(\\s+)(!)(\\s+.*)?$",
+      "captures": {
+        "1": { "name": "keyword.operator.prompt.claude-code" },
+        "3": { "name": "keyword.control.bang.claude-code" },
+        "4": { "name": "variable.other.command.claude-code" }
+      }
+    },
+    "prompt-line": {
+      "match": "^(\\s*[❯>])(\\s+.*)?$",
+      "captures": {
+        "1": { "name": "keyword.operator.prompt.claude-code" },
+        "2": { "name": "variable.other.input.claude-code" }
+      }
+    },
+    "tool-line": {
+      "match": "^(\\s*[●•⏺◉○◯└├│\\s]*)(Update|Read|Write|Edit|Bash|Glob|Grep|Agent|Search|TodoWrite|NotebookEdit)(\\(.*\\)|\\s+.*)?$",
+      "captures": {
+        "2": { "name": "entity.name.function.tool.claude-code" },
+        "3": { "name": "comment.status-done.claude-code" }
+      }
+    },
+    "diff-add": {
+      "match": "^(\\s*\\d+\\s+)(\\+)(\\s+.*)$",
+      "captures": {
+        "1": { "name": "comment.status-done.claude-code" },
+        "2": { "name": "markup.inserted.diff-symbol.claude-code" },
+        "3": { "name": "markup.inserted.diff-content.claude-code" }
+      }
+    },
+    "diff-remove": {
+      "match": "^(\\s*\\d+\\s+)(-)(\\s+.*)$",
+      "captures": {
+        "1": { "name": "comment.status-done.claude-code" },
+        "2": { "name": "markup.deleted.diff-symbol.claude-code" },
+        "3": { "name": "markup.deleted.diff-content.claude-code" }
+      }
+    },
+    "mode-indicator": {
+      "match": "\\b(plan|act|auto-accept edits|plan mode|act mode|Plan Mode|Act Mode|Normal mode)\\b",
+      "name": "constant.numeric.mode.claude-code"
+    },
+    "keyboard-shortcut": {
+      "match": "(shift\\+tab|Shift\\+Tab|ctrl\\+[a-zA-Z]|Ctrl\\+[a-zA-Z]|alt\\+[a-zA-Z]|Alt\\+[a-zA-Z]|option\\+[a-zA-Z]|Option\\+[a-zA-Z]|Esc\\+Esc)",
+      "name": "keyword.control.shortcut.claude-code"
+    },
+    "slash-command": {
+      "match": "(/[a-z][a-z0-9-]*)",
+      "name": "entity.name.function.command.claude-code"
+    },
+    "file-path": {
+      "match": "(?:~|\\.\\.?)?/[\\w./_-]+",
+      "name": "string.unquoted.path.claude-code"
+    },
+    "quoted-string": {
+      "match": "\"[^\"]*\"",
+      "name": "string.quoted.double.claude-code"
+    },
+    "descriptive-text": {
+      "match": ".+",
+      "name": "variable.other.text.claude-code"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "claude-code-lang",
+  "version": "0.0.1-alpha.1",
+  "description": "Shiki / Expressive Code language grammar for Claude Code CLI terminal output",
+  "type": "module",
+  "exports": {
+    ".": "./index.mjs",
+    "./plugin": "./frame-plugin.mjs",
+    "./grammar": "./grammar.json"
+  },
+  "main": "./index.mjs",
+  "files": [
+    "index.mjs",
+    "frame-plugin.mjs",
+    "grammar.json",
+    "theme-overrides.mjs"
+  ],
+  "peerDependencies": {
+    "@expressive-code/core": ">=0.38.0"
+  },
+  "peerDependenciesMeta": {
+    "@expressive-code/core": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "shiki",
+    "expressive-code",
+    "claude-code",
+    "textmate-grammar",
+    "syntax-highlighting"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erikreagan/claude-code-lang"
+  },
+  "devDependencies": {
+    "@expressive-code/core": "^0.41.7"
+  }
+}
